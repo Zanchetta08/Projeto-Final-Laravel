@@ -17,6 +17,7 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', [AlunoController::class,'index']);
 Route::get('/alunos/inserir', [AlunoController::class,'inserir']);
@@ -44,14 +45,10 @@ Route::get('/materias/edit/{id}', [MateriaController::class, 'edit']);
 Route::put('/materias/update/{id}', [MateriaController::class, 'update']);
 
 
-
-
-
-
-
-
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/users/{id}', [HomeController::class, 'show']);
+Route::delete('/users/{id}', [HomeController::class, 'destroy']);
+Route::get('/users/edit/{id}', [HomeController::class, 'edit']);
+Route::put('/users/update/{id}', [HomeController::class, 'update']);

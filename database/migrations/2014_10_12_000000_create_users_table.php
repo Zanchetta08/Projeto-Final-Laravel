@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('usuario')->unique();
             $table->string('cpf');  
             $table->string('password');
-          
+            $table->string('endereco');
+            $table->string('acesso'); 
             $table->rememberToken();
             $table->timestamps();
         });

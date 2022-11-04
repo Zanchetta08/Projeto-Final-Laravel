@@ -26,6 +26,29 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="acesso" class="col-md-4 col-form-label text-md-end">{{ __('Acesso') }}</label>
+
+                            <div class="col-md-6 form-check form-check-inline">
+                               
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="acesso" name="acesso" value="Professor"> Professor        
+                                        <label class="form-check-label" for="radio"></label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="acesso" name="acesso" value="Aluno"> Aluno
+                                        <label class="form-check-label" for="radio"></label>
+                                    </div>
+
+                                    @error('acesso')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="usuario" class="col-md-4 col-form-label text-md-end">{{ __('Usuário') }}</label>
 
                             <div class="col-md-6">
@@ -52,6 +75,20 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="endereco" class="col-md-4 col-form-label text-md-end">{{ __('Endereço') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="endereco" type="endereco" class="form-control @error('endereco') is-invalid @enderror" name="endereco" value="{{ old('endereco') }}" required autocomplete="endereco">
+
+                                @error('endereco')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>       
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -89,3 +126,4 @@
     </div>
 </div>
 @endsection
+
