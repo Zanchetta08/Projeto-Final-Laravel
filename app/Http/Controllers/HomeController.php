@@ -27,22 +27,26 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function show($id)
+    public function show()
     {
-        $user = User::findOrFail($id);
-        return view('users.show', ['user' => $user]);
+        return view('users.show');
     }
 
-    public function edit($id) {
-        $user = User::findOrFail($id);
-        
-        return view('users.edit', ['user' => $user]);
+    public function edit() {
+        return view('users.edit');
     }
 
     public function update(Request $request) {
 
         User::findOrFail($request->id)->update($request->all());
 
-        return redirect('/')->with('msg', 'Usuário editado com sucesso!');
+        return redirect('/home')->with('msg', 'Usuário editado com sucesso!');
+    }
+
+    public function destroy($id) {
+       
+        User::findOrFail($id)->delete();
+
+        return redirect('/home')->with('msg', 'Usuário excluido com sucesso!');
     }
 }

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('cpf');  
             $table->string('password');
             $table->string('endereco');
-            $table->string('acesso'); 
+            $table->string('acesso');
+            $table->string('image'); 
             $table->rememberToken();
             $table->timestamps();
         });

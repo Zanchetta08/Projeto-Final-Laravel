@@ -55,7 +55,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'cpf' => ['required', 'string', 'min:11', 'max:11'],
             'endereco' => ['required', 'string', 'max:255'],
-            'acesso' => ['required', 'string']
+            'acesso' => ['required', 'string'],
+            'image' => ['string']
         ]);
     }
 
@@ -73,7 +74,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'cpf' => $data['cpf'],
             'endereco' => $data['endereco'],
-            'acesso' => $data['acesso']
+            'acesso' => $data['acesso'],
+            'image' => 'avatar0'
         ]);
     }
 }

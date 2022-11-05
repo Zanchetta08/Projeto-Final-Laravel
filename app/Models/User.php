@@ -23,7 +23,8 @@ class User extends Authenticatable
         'cpf',
         'endereco',
         'password',
-        'acesso'
+        'acesso',
+        'image'
     ];
 
     /**
