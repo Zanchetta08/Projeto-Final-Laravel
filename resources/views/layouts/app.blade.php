@@ -42,7 +42,10 @@
                         @else
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link">Alunos</a>
+                                    <a href="/" class="nav-link">Usuários</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/alunos" class="nav-link">Alunos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/alunos/inserir" class="nav-link">Inserir alunos</a>

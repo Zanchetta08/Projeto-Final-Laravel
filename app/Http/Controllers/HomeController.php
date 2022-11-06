@@ -22,9 +22,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $search = request('search');
+            if($search) {
+                $users = User::where([
+                    ['name', 'like', '%'.$search.'%']
+                ])->get();
+            } else {
+                $users = User::paginate(10);
+            }
+
+        return view('home',['users' => $users, 'search' => $search]);
     }
 
     public function show()
@@ -40,13 +48,13 @@ class HomeController extends Controller
 
         User::findOrFail($request->id)->update($request->all());
 
-        return redirect('/home')->with('msg', 'Usuário editado com sucesso!');
+        return redirect('/')->with('msg', 'Usuário editado com sucesso!');
     }
 
     public function destroy($id) {
        
         User::findOrFail($id)->delete();
 
-        return redirect('/home')->with('msg', 'Usuário excluido com sucesso!');
+        return redirect('/')->with('msg', 'Usuário excluido com sucesso!');
     }
 }

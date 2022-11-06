@@ -47,7 +47,7 @@ Route::put('/materias/update/{id}', [MateriaController::class, 'update']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/users/{id}', [HomeController::class, 'show']);
 Route::delete('/users/{id}', [HomeController::class, 'destroy']);
 Route::get('/users/edit/{id}', [HomeController::class, 'edit']);
