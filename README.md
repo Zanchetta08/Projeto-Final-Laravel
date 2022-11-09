@@ -1,3 +1,16 @@
+# Integrantes
+### Plínio Zanchetta Ra: 22023003
+
+### Fernando Correa Ra:20098174
+
+### Murilo Montebello Ra:22018897
+
+### Igor Cohen Ra:21012185
+
+### Mateo Shimizu Ra:22021448
+
+### Pedro Rodolfo Ra:22886287
+
 
 # Projeto Laravel
 
